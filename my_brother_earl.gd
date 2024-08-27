@@ -1,8 +1,6 @@
 extends Node2D
 
-#@export var scene : PackedScene
-var scene
-
+var scene = load("res://some_sick_node.tscn")
 
 func change_scene():
     if scene != null:

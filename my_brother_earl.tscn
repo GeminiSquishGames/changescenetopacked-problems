@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dypiuibagrreb"]
+
+[ext_resource type="Script" path="res://my_brother_earl.gd" id="1_405re"]
+
+[node name="MyBrotherEarl" type="Node2D"]
+script = ExtResource("1_405re")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 376.0
+offset_bottom = 232.0
+text = "I can call the other guy too. People want to use @export for this incase we have to reorganize our files and have Godot Filesystem do it's magic when we refactor things."
+autowrap_mode = 3
+
+[connection signal="pressed" from="Button" to="." method="change_scene"]
