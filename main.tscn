@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5omn7dkvdkx2"]
+
+[ext_resource type="Script" path="res://scene_change.gd" id="1_3vt4h"]
+[ext_resource type="PackedScene" uid="uid://ruik4fhbaaxe" path="res://scene_1.tscn" id="2_qo0br"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_3vt4h")
+scene = ExtResource("2_qo0br")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 280.0
+offset_bottom = 152.0
+text = "Hello, I am the main scene. Let's go to Scene1, push me.
+"
+autowrap_mode = 3
+
+[connection signal="pressed" from="Button" to="." method="change_scene"]

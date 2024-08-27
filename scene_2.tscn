@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://dplntm0yjxqf8"]
+
+[ext_resource type="Script" path="res://scene_change.gd" id="1_f00bv"]
+[ext_resource type="PackedScene" uid="uid://b5omn7dkvdkx2" path="res://main.tscn" id="2_fph01"]
+
+[node name="Scene2" type="Node2D"]
+script = ExtResource("1_f00bv")
+scene = ExtResource("2_fph01")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 281.0
+offset_bottom = 160.0
+text = "Yo, I am Scene2. Imma take you back to the main scene. Smash this button!
+"
+autowrap_mode = 3
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 384.0
+offset_top = 88.0
+offset_right = 1040.0
+offset_bottom = 336.0
+text = "You might notice the following errors in your Debby Ugger:
+
+E 0:00:01:0358   _parse_ext_resource: res://scene_2.tscn:8 - Parse Error: [ext_resource] referenced non-existent resource at: res://main.tscn
+  <C++ Source>   scene/resources/resource_format_text.cpp:159 @ _parse_ext_resource()
+
+E 0:00:05:0006   scene_change.gd:7 @ change_scene(): Can't change to a null scene. Use unload_current_scene() if you wish to unload it.
+  <C++ Error>    Condition \"p_scene.is_null()\" is true. Returning: ERR_INVALID_PARAMETER
+  <C++ Source>   scene/main/scene_tree.cpp:1430 @ change_scene_to_packed()
+  <Stack Trace>  scene_change.gd:7 @ change_scene()
+
+This is fine... everything is fine... I have no idea what that means because main.tscn is fine. It's right there! I can see it in the res:// folder! So just go back to developing your sweet game mans!"
+autowrap_mode = 3
+
+[connection signal="pressed" from="Button" to="." method="change_scene"]
+[connection signal="pressed" from="Button" to="Button" method="set_text" binds= ["Hah fooled you, now your project is messed up!"]]
+[connection signal="pressed" from="Button" to="Label" method="set_visible" binds= [true]]

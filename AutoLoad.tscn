@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfbys60rjd1oh"]
+
+[ext_resource type="Script" path="res://AutoLoad.gd" id="1_n8l7a"]
+[ext_resource type="PackedScene" uid="uid://b5omn7dkvdkx2" path="res://main.tscn" id="2_dcsel"]
+
+[node name="AutoLoad" type="Node"]
+script = ExtResource("1_n8l7a")
+scene = ExtResource("2_dcsel")
